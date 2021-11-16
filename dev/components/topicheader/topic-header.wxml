@@ -1,0 +1,17 @@
+<!-- 投票卡片顶部模板 -->
+<!-- 使用示例 <topic-header title="标题" description="描述" img-url="../test/topic-header.png"></topic-header> -->
+<view class="topic-header">
+    <view class="title-container">
+        <view class='title'>{{title}}</view>
+        <view class="today-topic-container">
+          <image class="today-topic-container-image" src="../../images/today-topic-bg.png" mode='aspectFit'>
+          </image>
+          <text class="today-topic-text">今日话题</text>
+        </view>
+        
+    </view>
+    <text class='description'>{{description}}</text>
+    <view class="header-img-container">
+        <image class="topic-header-image" src='{{imgUrl}}'></image>
+    </view>
+</view>

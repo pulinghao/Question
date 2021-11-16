@@ -1,0 +1,35 @@
+<!--components/todaydialogview/today-dialog-view.wxml-->
+<view class='today-dialog-view' wx:if="{{isShow}}">
+  <view class='today-dialog-image-part'>
+    <image class='today-dialog-image' src='../../images/todaycheckin.png' mode='aspectFit'></image>
+  </view>
+  <view class='today-dialog-main-part'>
+    <text>今日签到</text>
+    <text class='today-dialog-main-money-text'>+{{reward}}</text>
+    <text>金币</text>
+  </view>
+  <view class='today-dialog-sub-part'>
+    <view class='today-dialog-subleft-part'>
+      <text class='lianxuqiandao'>连续签到</text>
+      <text class='lianxuqiandao-x'>{{day}}</text>
+      <text class='tian'>天</text>
+    </view>
+    <view class='today-dialog-sub-line'></view>
+    <view class='today-dialog-subright-right'>
+      <text class='jinbijiacheng'>金币加成</text>
+      <text class='jinbijiacheng-x'>{{plus}}</text>
+    </view>
+  </view>
+  <view class='today-dialog-button-part'>
+    <block wx:if='{{hasLogin}}'>
+    <button class='today-dialog-button' bindtap='onCheckInClick'>
+    <text class='qiandao'>签到</text>
+    </button>
+    </block>
+    <block wx:else>
+        <button class='today-dialog-button-shouquan' open-type="getUserInfo" bindgetuserinfo="getSystemUserInfo">
+        <text class='shouquanqiandao'>授权并签到</text>
+        </button>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "问小答",
+  "usingComponents": {
+    "money-task-item": "/components/moneytaskitem/money-task-item",
+    "redem-card-item": "/components/redemcarditem/redem-card-item"
+  }
+}

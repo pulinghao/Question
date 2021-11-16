@@ -1,0 +1,161 @@
+/* pages/index/answer.wxss */
+
+.head {
+  min-height: 144rpx;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.head .title{
+  font-size: 38rpx;
+  /* font-family: PingFangTC-Regular; */
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+
+.body {
+  width: 100%;
+  height: 1334rpx;
+  background: rgba(230, 233, 240, 1);
+}
+
+.body .textarea-part {
+  position: relative;
+  top: 20rpx;
+  height: auto;
+  margin-top: 20rpx;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.body .row-textarea {
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 16px;
+  /* font-family: PingFangTC-Regular; */
+  color: rgba(65, 79, 99, 1);
+  float: left;
+  height: 370rpx;
+  width: 100%;
+  background: white;
+}
+
+.textarea-part .btn-area{
+  position: relative;
+  height: 94rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+/* 照片展示区 */
+.textarea-part .image-area
+{
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+
+.image-area .view-item
+{
+  height: 120rpx;
+  width: 130rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.image-area .image-item
+{
+  position: relative;
+  top: 18rpx;
+  height: 102rpx;
+  width: 102rpx;
+}
+
+.image-area .view-item .close-item-img
+{
+  height: 36rpx;
+  width: 36rpx;
+  z-index: 1;
+  position: relative;
+  left: -18rpx;
+}
+/*  */
+.left-part{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-part .photo-area{
+  margin-top: 10rpx;
+  width: 182rpx;
+  height: 74rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.photo-area .icon-photo
+{
+  width: 34rpx;
+  height: 32rpx;
+}
+
+.photo-area .text-photo
+{
+  position: relative;
+  left: 15rpx;
+  font-size: 30rpx;
+  /* font-family: PingFangTC-Regular; */
+  font-weight: 400;
+  color: rgba(159,159,159,1);
+}
+
+.right-part{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 20rpx;
+}
+
+.comment-btn {
+  margin-top: 10rpx;
+  width: 182rpx;
+  height: 74rpx;
+  left: 60rpx;
+  background-color: #0176ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.comment-btn .icon-comment {
+  width: 34rpx;
+  height: 32rpx;
+}
+
+.comment-btn .icon-text {
+  font-size: 30rpx;
+  /* font-family: PingFangTC-Regular; */
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}

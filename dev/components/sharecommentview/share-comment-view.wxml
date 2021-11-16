@@ -1,0 +1,15 @@
+<!-- 评论和回答view -->
+<!-- 使用示例： <share-comment-view></share-comment-view> -->
+<view class='share-comment-view'>
+
+    <view class="share-container" bindtap="shareClick">
+        <button class='share-btn' formType="submit" open-type='share'>
+            <image class='weixin-icon' src='../../images/weixinicon.png'></image>
+            <text class="weixin-share-btn-text">看看朋友们怎么选</text>
+        </button>
+    </view>
+    <view class="comment-container" bindtap="commentClick">
+        <image class="comment-icon" src="../../images/weidakanfaicon.png"></image>
+        <text class="comment-btn-text">回答一波伟大看法</text>
+    </view>
+</view>

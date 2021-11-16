@@ -1,0 +1,70 @@
+.topic-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-left: 22rpx;
+    margin-top: 10rpx;
+    width: 500rpx;
+    font-size: 34rpx;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    line-height: 48rpx;
+}
+
+.description {
+    margin-left: 22rpx;
+    margin-right: 22rpx;
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(159, 159, 159, 1);
+}
+
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20rpx;
+}
+
+.today-topic-container {
+    width: 175rpx;
+    height: 80rpx;
+    margin-top: -8rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-topic-container-image
+{
+  width: 172rpx;
+  height: 76rpx;
+  position: absolute;
+  z-index: 1;
+}
+
+.today-topic-text {
+    font-size: 26rpx;
+    color: #ffffff;
+    margin-left: 59rpx;
+    z-index: 2;
+}
+
+.topic-header-image {
+    margin-top: 16rpx;
+    width: 100%;   
+    height: 280rpx; 
+    min-height: 1rpx;
+    align-self: center;
+}
+
+.header-img-container {
+    margin-left: 22rpx;
+    margin-right: 22rpx;
+    margin-bottom: 30rpx;
+}

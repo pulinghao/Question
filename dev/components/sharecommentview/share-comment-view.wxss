@@ -1,0 +1,50 @@
+.share-comment-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.share-container {
+    margin-left: 68rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.weixin-icon {
+    width: 36rpx;
+    height: 30rpx;
+}
+
+.weixin-share-btn-text {
+    font-size: 26rpx;
+    color: #20C752;
+    margin-left: 12rpx;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 68rpx;
+}
+
+.comment-btn-text {
+    font-size: 26rpx;
+    color: #0076FF;
+    margin-left: 12rpx;
+}
+
+.comment-icon {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.share-btn {
+    background: none;
+    padding: 0;
+}
+
+.share-btn::after{
+    border: none; 
+}

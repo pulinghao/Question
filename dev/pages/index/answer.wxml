@@ -1,0 +1,39 @@
+<!--pages/index/answer.wxml-->
+<!--问小答 填写回答-->
+<view class='head'>
+  <text class='title'>{{title}}</text>
+</view>
+
+<view class='body'>
+  <form bindsubmit="onClickComment">
+    <view class='textarea-part'>
+      <textarea class='row-textarea' bindblur="bindTextAreaBlur" placeholder='{{placeholder}}' name='textarea' maxlength='-1' value='{{selfComment.answer}}'/>
+      <view class='image-area' wx:if="{{imgPathArray.length != 0}}">
+        <block wx:for="{{imgPathArray}}" wx:for-item='item' wx:index='idx'>
+          <view class='view-item'>
+            <image class='image-item' src='{{item}}' mode='aspectFit' data-src='{{item}}' bindtap='onImageDetail'></image>
+            <image class='close-item-img' src='../../images/close.png' bindtap='onDeleteImage' data-index='{{index}}'></image>
+          </view>
+          
+        </block>
+      </view>
+      <view class='btn-area'>
+        <view class='left-part'>
+          <view class='photo-area' bindtap='onPhotoClick'>
+            <image class='icon-photo' src='../../images/uploadImg.png' mode='aspectFit'></image>
+            <text class='text-photo'>图片</text>
+          </view>
+        </view>
+        <view class='right-part'>
+          <button class='comment-btn' formType="submit" disabled='{{buttonClicked}}'>
+            <image class='icon-comment' src='../../images/submmit.png' mode='aspectFit'></image>
+            <text class='icon-text'>{{hasComment? '修改':'回答'}}</text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </form>
+
+<!-- 金币奖励弹窗 -->
+<reward-toast is-show="{{rewardToast.isShow}}" toast-title="{{rewardToast.title}}" toast-subtitle="{{rewardToast.subtitle}}"></reward-toast>
+</view>

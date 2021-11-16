@@ -1,0 +1,31 @@
+<view class='body'>
+
+  <scroll-view scroll-y='true' class='swiper-box' style="height: 100%;">
+
+    <block wx:if="{{dataList.length > 0}}">
+      <block wx:for-items="{{dataList}}">
+        <view class='item-layout'>
+
+          <view class='title'>
+            {{item.title}}
+          </view>
+
+          <view class='answer'>
+            {{item.answer}}
+          </view>
+          
+        </view>
+
+      </block>
+    </block>
+
+    <!-- <view class='no-more-layout'>
+
+      <image class='icon' src='../../images/main-no-more.png'> </image>
+
+      <view class='text'>没有更多了.. </view>
+    </view> -->
+
+  </scroll-view>
+
+</view>

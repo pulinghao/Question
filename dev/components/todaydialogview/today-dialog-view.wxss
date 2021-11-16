@@ -1,0 +1,115 @@
+/* components/todaydialogview/today-dialog-view.wxss */
+
+.today-dialog-image-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.today-dialog-image {
+  top: 26rpx;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.today-dialog-main-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.today-dialog-main-money-text {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  color: #fe9801;
+}
+
+.today-dialog-sub-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 8rpx;
+}
+
+.lianxuqiandao {
+  color: rgba(157, 157, 157, 1);
+  font-size: 17px;
+}
+
+.lianxuqiandao-x {
+  color: #0076ff;
+  font-size: 17px;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.tian {
+  color: rgba(157, 157, 157, 1);
+  font-size: 17px;
+}
+
+.jinbijiacheng {
+  color: rgba(157, 157, 157, 1);
+  font-size: 17px;
+}
+
+.jinbijiacheng-x {
+  color: #fe9801;
+  font-size: 17px;
+  margin-left: 10rpx;
+}
+
+.today-dialog-sub-line {
+  position: relative;
+  top: 10rpx;
+  width: 4rpx;
+  height: 36rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  background: #dbdbdb;
+}
+
+.today-dialog-button {
+  margin-top: 32rpx;
+  width: 115px;
+  height: 36px;
+  background: rgba(0, 118, 255, 1);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qiandao
+{
+  color: white;
+}
+
+.today-dialog-button-shouquan
+{
+  margin-top: 32rpx;
+  width: 120px;
+  height: 36px;
+  background: rgba(0, 118, 255, 1);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shouquanqiandao
+{
+  color: white;
+}
+.today-dialog-view {
+  position: absolute;
+  left: 134rpx;
+  right: 134rpx;
+  top: 164rpx;
+  height: 580rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10px;
+  border:1px solid rgba(231,231,231,1)
+}

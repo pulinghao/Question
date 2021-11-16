@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "问小答",
+  "usingComponents": {
+    "topic-header": "/components/topicheader/topic-header",
+    "to-vote-view": "/components/tovoteview/to-vote-view",
+    "voted-view": "/components/votedview/voted-view",
+    "share-comment-view": "/components/sharecommentview/share-comment-view",
+    "vote-label-view": "/components/votelabelview/vote-label-view",
+    "topic-card-item": "/components/topiccarditem/topic-card-item",
+    "reward-toast": "/components/rewardtoast/reward-toast",
+    "today-dialog-view": "/components/todaydialogview/today-dialog-view"
+  }
+}

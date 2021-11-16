@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#0076FF",
+  "navigationBarTitleText": "填写回答",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "reward-toast": "/components/rewardtoast/reward-toast"
+}
+}

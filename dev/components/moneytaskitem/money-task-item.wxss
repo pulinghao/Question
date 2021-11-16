@@ -1,0 +1,42 @@
+.money-task-item {
+  height: 124rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.money-task-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.money-task-title {
+  color: #000000;
+  font-size: 28rpx;
+}
+
+.money-task-desc {
+  color: #787878;
+  font-size: 24rpx;
+  margin-top: 4rpx;
+}
+
+.money-task-act-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.money-task-act {
+  color: #787878;
+  font-size: 28rpx;
+}
+
+.remaining-money-icon {
+  margin-left: 14rpx;
+  width: 16rpx;
+  height: 30rpx;
+}

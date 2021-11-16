@@ -1,0 +1,26 @@
+<!-- item 的 label view，包括分享、热度和评论数量 -->
+<!-- 使用示例： <vote-label-view vote-number="78" comment-number="13"></vote-label-view> -->
+<view class="vote-label-view">
+    <view class="lable-left">
+        <view class="vote-num-container icon-container">
+            <image class='label-icon' src="../../images/vote-num-icon.png"></image>
+            <view class="label-num">{{voteNumber}}</view>
+        </view>
+
+        <view class="comment-num-container icon-container">
+            <image class='label-icon' src="../../images/main-answer.png"></image>
+            <view class="label-num">{{commentNumber}}</view>
+        </view>
+
+    </view>
+
+    <view class="label-right">
+        <button class='share-btn' catchtap="onShare" formType="submit" open-type='share'>
+            <view class="share-container">
+                <image class='weixin-icon' src='../../images/weixinicon.png'></image>
+                <text class="weixin-share-btn-text">看看朋友们怎么选</text>
+            </view>
+        </button>
+    </view>
+
+</view>

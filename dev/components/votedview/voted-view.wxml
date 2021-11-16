@@ -1,0 +1,19 @@
+<!-- 已经投票后的视图 -->
+<!-- <voted-view left-text="左边文字" left-percent="80" left-num="30" 
+            right-text="右边文字" right-percent="40" right-num="50"></voted-view> -->
+<view voted-view>
+    <view class="vote-text-container">
+        <text class="left-text-voted">{{leftText}} {{leftPercent}}%({{leftNum}})</text>
+        <text class="right-text-voted">{{rightText}} {{rightPercent}}%({{rightNum}})</text>
+    </view>
+
+    <view class="vote-rate-container">
+        <view class="left-part">
+            <view class="left-part-bar" style="width:{{leftPercent}}%"></view>
+        </view>
+        <image class="vote-vs-icon" src="../../images/vs.png"></image>
+        <view class="right-part">
+            <view class="right-part-bar" style="width:{{rightPercent}}%"></view>
+        </view>
+    </view>
+</view>

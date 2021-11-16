@@ -1,0 +1,12 @@
+<!-- 金币任务聚合页：金币任务卡片 -->
+<!-- 使用示例 -->
+<view class="money-task-item">
+  <view class="money-task-title-container">
+    <view class="money-task-title">{{title}}</view>
+    <view class="money-task-desc">{{desc}}</view>
+  </view>
+  <view class="money-task-act-container">
+      <view class="money-task-act">{{action}}</view>
+      <image class="remaining-money-icon" src="../../images/more-icon.png" mode="aspectFit|aspectFill|widthFix" />
+  </view>
+</view>

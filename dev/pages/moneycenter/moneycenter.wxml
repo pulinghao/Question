@@ -1,0 +1,50 @@
+<!-- 金币聚合页/金币兑换中心 -->
+<view class="body">
+  <scorll-view scroll-y='true'>
+    <view class="header-container">
+      <view id="remaining-money-title">金币余额</view>
+      <view class="remaining-money-contianer">
+        <image id="remaining-money-icon" src="../../images/gold-coin-icon.png" mode="aspectFit|aspectFill|widthFix" />
+        <view id="remaining-money">{{totalMoney}}</view>
+      </view>
+      <view class="money-desc-container">
+        <text id="today-money" class="money-desc">今日金币{{todayMoney}} | 累计赚取金币{{sumMoney}}</text>
+        <!-- <view id="money-detail-btn">金币明细</view> -->
+      </view>
+    </view>
+
+    <!-- 邀请好友 -->
+    <button class='share-btn' formType="submit" open-type='share'>
+      <view class="invite-friends-card" bindtap='toHome'>
+        <view class="invite-friends-desc-container">
+          <image class="friends-icon" src="../../images/friends-icon.png" mode="aspectFit|aspectFill|widthFix" />
+          <view class="invite-friends-title-container">
+            <view class="invte-friends-title">邀请好友一起来</view>
+            <view class="invite-friends-desc">可获得500金币</view>
+          </view>
+        </view>
+        <image class="invite-friends-more-icon" src="../../images/more-icon.png" mode="aspectFit|aspectFill|widthFix" />
+      </view>
+    </button>
+
+    <!-- 金币任务开始 -->
+    <view class="money-task-title">金币任务</view>
+    <view class="money-task-container">
+      <block wx:for-items="{{moneyTasks}}" wx:for-index="index" >
+        <money-task-item title="{{item.title}}" desc="{{item.desc}}" action="{{item.action}}" bindtap="toHome"></money-task-item>
+        <block wx:if="{{index < moneyTasks.length}}">
+          <view class="item-divider"> </view>
+        </block>
+      </block>
+    </view>
+    <!-- 金币任务结束 -->
+    <view class="money-task-title">金币兑换</view>
+    <view class="none-exchange">精彩兑换内容敬请期待~</view>
+
+    <view class="redem-list-container">
+      <block wx:for-items="{{redemList}}">
+        <redem-card-item class="redem-card-item" src="{{item.src}}" product-name="{{item.productName}}" product-price="{{item.productPrice}}"></redem-card-item>
+      </block>
+  </view>        
+  </scorll-view>
+</view>

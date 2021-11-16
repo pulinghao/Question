@@ -1,0 +1,142 @@
+<view class='body'>
+  <scroll-view scroll-y='true' class='swiper-box' bindscrolltolower="searchScrollLower">
+    <block wx:if="{{dataList.length > 0}}">
+      <block wx:for-items="{{dataList}}">
+        <block wx:if="{{item.card_style == 2 && item.isTop == 1}}">
+          <view class="topic-card-item-container" bindtap='goDetailPage' data-item='{{item}}'>
+            <topic-card-item bindleftevent="onVoteForYes" bindrightevent="onVoteForNo" data-voteid='{{item.auto_id}}' catchshareclick="onShareClickOnMain" comment-num="{{item.answer_num}}" vote-id="{{item.auto_id}}" is-voted="{{item.voteInfo.isVoted}}" title="{{item.title}}"
+              description="{{item.remark}}" img-url="{{item.imgUrl}}" left-text="{{item.voteInfo.yesText}}" left-percent="{{item.voteInfo.yesPercent}}" left-num="{{item.voteInfo.yesNum}}" right-text="{{item.voteInfo.noText}}" right-percent="{{item.voteInfo.noPercent}}"
+              right-num="{{item.voteInfo.noNum}}"></topic-card-item>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='item-layout' bindtap='goDetailPage' data-item='{{item}}'>
+            <view class='title'>
+              {{item.title}}
+            </view>
+
+            <view class='answer'>
+              {{item.remark}}
+            </view>
+
+            <!-- 模板1 普通 card_style = 0 -->
+            <block wx:if="{{item.card_style == 0}}">
+              <view class='bottom-layout'>
+                <view class='time'>{{item.create_time}} </view>
+                <view class='answer-layout'>
+                  <image class='icon' src='../../images/main-answer.png'></image>
+                  <view class='number'>{{item.answer_num}} </view>
+                </view>
+              </view>
+            </block>
+
+            <!-- 模板2 有图片无投票 card_style = 1 -->
+            <block wx:if="{{item.card_style == 1}}">
+              <block wx:if="{{item.imgUrl.length > 0}}">
+                <image src='{{item.imgUrl}}' class='item-image'></image>
+                <view class='bottom-layout'>
+                  <view class='time'>{{item.create_time}} </view>
+                  <view class='answer-layout'>
+                    <image class='icon' src='../../images/main-answer.png'></image>
+                    <view class='number'>{{item.answer_num}} </view>
+                  </view>
+                </view>
+              </block>
+            </block>
+
+            <!-- 模板3 有图片有投票 card_style = 2 -->
+            <block wx:if="{{item.card_style == 2}}">
+              <block wx:if="{{item.imgUrl.length > 0}}">
+                <image src='{{item.imgUrl}}' class='item-image'></image>
+              </block>
+              <!-- 已投票 -->
+              <block wx:if="{{item.voteInfo.isVoted == true}}">
+                <vote-label-view class="vote-label-view" vote-number="{{item.voteInfo.noNum + item.voteInfo.yesNum}}" comment-number="{{item.answer_num}}"></vote-label-view>
+                <view class="label-divider-line"></view>
+                <voted-view leftText="{{item.voteInfo.yesText}}" leftPercent="{{item.voteInfo.yesPercent}}" leftNum="{{item.voteInfo.yesNum}}" rightText="{{item.voteInfo.noText}}" rightPercent="{{item.voteInfo.noPercent}}" rightNum="{{item.voteInfo.noNum}}"></voted-view>
+              </block>
+              <!-- 未投票 -->
+              <block wx:else>
+                <to-vote-view class='to-vote-view' leftText="{{item.voteInfo.yesText}}" rightText="{{item.voteInfo.noText}}" bindleftevent="onVoteForYes" bindrightevent="onVoteForNo" data-voteid="{{item.auto_id}}">
+                </to-vote-view>
+              </block>
+            </block>
+
+            <!-- 模板4 无图片有投票 card_style = 3 -->
+            <block wx:if="{{item.card_style == 3}}">
+
+            </block>
+
+          </view>
+        </block>
+      </block>
+      <view class='no-more-layout'>
+
+        <image class='icon' src='../../images/main-no-more.png'> </image>
+
+        <view class='text' hidden='{{!searchLoading}}'>没有更多了.. </view>
+
+        <view class='text' hidden='{{!searchLoadComplete}}'>正在载入更多.. </view>
+      </view>
+
+    </block>
+
+    <block wx:else>
+      <!-- 什么都没有 -->
+      <view class='empty'>
+        <image class='empty-box' src='' mode='aspectFit'></image>
+        <text class='empty-label'></text>
+      </view>
+    </block>
+
+  </scroll-view>
+
+  <today-dialog-view bind:checkinevent='onCheckIn' reward='{{dailyLogin.reward}}' day='{{dailyLogin.day}}' plus='{{dailyLogin.plus}}' isShow='{{dailyLogin.isShow}}' hasLogin='{{dailyLogin.hasLogin}}' bind:getsysteminfo='getUserInfoAndCheckIn'>
+  </today-dialog-view>
+  <button class='button-userinfo-bg' hidden="{{authorized}}" style="position:absolute;left:0;top:0" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+  </button>
+</view>
+
+<!-- 蒙层 -->
+<view>
+  <view class="zhezao" hidden="{{isHidden}}" bindtap='onHideTip'>
+    <view class="t_w">
+      <!--弹出框开始-->
+      <view class="tanchu_view">
+        <view class='first-line'>
+          <image class='toast-img' src='../../images/wendatankuang.png' mode='apsectFit'></image>
+        </view>
+        <view class='second-line'>
+          <text class='toast-title'>
+            我投出了宝贵的一票
+          </text>
+        </view>
+        <view class='third-line'>
+          <text class='toast-subtitle'>
+            去看看朋友们怎么说吧
+          </text>
+        </view>
+        <voted-view leftText="{{voteItem.yesText}}" leftPercent="{{voteItem.yesPercent}}" leftNum="{{voteItem.yesNum}}" rightText="{{voteItem.noText}}" rightPercent="{{voteItem.noPercent}}" rightNum="{{voteItem.noNum}}"></voted-view>
+        <view class='fifth-line'>
+
+          <button class='button-left-part' formType="submit" open-type='share' data-item='{{voteItem}}'>
+            <image class='weixin-icon' src='../../images/weixinicon.png'></image>
+            <text class='weixin-text' bindtap='onShareClickInToast' data-item="{{voteItem}}">看看朋友怎么选</text>
+          </button>
+          <view class='button-right-part'>
+            <image class='answer-icon' src='../../images/weidakanfaicon.png'></image>
+            <text class='kanfa-text' bindtap='onCommentClick' data-item="{{voteItem}}">回答伟大的看法</text>
+          </view>
+        </view>
+      </view>
+      <!--弹出框结束-->
+    </view>
+  </view>
+  <reward-toast is-show="{{rewardToast.isShow}}" toast-title="{{rewardToast.title}}" toast-subtitle="{{rewardToast.subtitle}}"></reward-toast>
+</view>
+
+<view class='float-view' bindtap='onClickCoincenter' hidden='{{!authorized}}'>
+  <image class='icon-circle' src='../../images/coinrukou.png' mode='aspectFit'>
+  </image>
+  <text class='float-title'>金币</text>
+</view>

@@ -1,0 +1,81 @@
+<import src="../../lib/authLogin/authLoginManager.wxml" />
+<view class='body'>
+  <scroll-view scroll-y='true' class='swiper-box'>
+    <view class='header'>
+      <view class='user-info'>
+        <image class='avator' src="{{headImg}}"></image>
+        <view class='nickname'>{{nickName}}
+        </view>
+      </view>
+
+      <view class='common-question-layout' bindtap='goQuestionPage'>
+        <view class='common-question'>
+          <image class='icon' src='../../images/common-question.png'></image>
+          <view class='text'>常见问题</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='coin-center-card' bindtap='onClickMoneyCenter'>
+      <view class='left-part'>
+        <text class='coin-text'>金币中心</text>
+      </view>
+      <view class='right-part'>
+        <image class='coin-image' src='../../images/coin.png' mode='aspectFit'></image>
+        <view class='yellow-bar'>
+          <text class='lingqujibin'>领取金币</text>
+        </view>
+        <image class='arrow-image' src='../../images/arrow.png'></image>
+      </view>
+    </view>
+
+    <block wx:if="{{dataList.length > 0}}">
+      <view class='title'>我参与的话题</view>
+
+      <block wx:for-items="{{dataList}}">
+        <view class='item-layout' bindtap='goDetailPage' data-item='{{item}}'>
+
+          <view class='item-title'>
+            {{item.title}}
+          </view>
+
+          <view class='answer'>
+            {{item.remark}}
+          </view>
+
+          <block wx:if="{{item.imgs.length > 0}}">
+            <view class='image-layout'>
+              <block wx:for-items="{{item.imgs}}">
+                <image class='image' src='../../images/emoji.png' data-item='{{item}}'></image>
+              </block>
+            </view>
+          </block>
+
+          <view class='bottom-layout'>
+
+            <view class='time'>{{item.create_time}} </view>
+
+            <view class='answer-layout'>
+
+              <image class='icon' src='../../images/main-answer.png'></image>
+
+              <view class='number'>{{item.answer_num}} </view>
+            </view>
+          </view>
+
+        </view>
+
+      </block>
+
+      <view class='no-more-layout'>
+
+        <image class='icon' src='../../images/main-no-more.png'> </image>
+
+        <view class='text'>没有更多了.. </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<template is="authLoginManager" data="{{...item}}">
+</template>

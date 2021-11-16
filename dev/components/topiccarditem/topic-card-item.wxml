@@ -1,0 +1,29 @@
+<!-- 今日话题卡片 -->
+<!-- 使用示例： <topic-card-item title="标题" description="描述" img-url="../test/topic-header.png" left-text="左边文字" left-percent="80" left-num="30" 
+right-text="右边文字" right-percent="40" right-num="50"></topic-card-item> -->
+<view class="topic-card-item">
+    <topic-header title="{{title}}" description="{{description}}" img-url="{{imgUrl}}"></topic-header>
+    
+    <block wx:if="{{isShowLabelView}}">
+        <view class="label-view-container">
+            <vote-label-view class="label-view" vote-number="{{leftNum+rightNum}}" comment-number="{{commentNum}}"></vote-label-view>
+        </view>
+    </block>
+    <view class="divider-line"></view>
+    <block wx:if="{{!isVoted}}">
+        <!-- 还未投票 -->
+        <view class="to-vote-view-container">
+            <to-vote-view class="to-vote-view" left-text="{{leftText}}" right-text="{{rightText}}"></to-vote-view>
+        </view>
+    </block>
+    <block wx:else>
+        <!-- 已经投票 -->
+        <view class="voted-view-container">
+            <voted-view leftText="{{leftText}}" leftPercent="{{leftPercent}}" leftNum="{{leftNum}}" rightText="{{rightText}}" rightPercent="{{rightPercent}}" rightNum="{{rightNum}}"></voted-view>
+        </view>
+    </block>
+    <view class="divider-line"></view>
+    <view class="share-comment-view-container">
+        <share-comment-view class="share-comment-vie"></share-comment-view>
+    </view>
+</view>

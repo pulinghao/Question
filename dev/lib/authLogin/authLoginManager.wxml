@@ -1,0 +1,47 @@
+<!-- 
+1.需要在引入的js类里，定义 getSystemUserInfo 方法，这个方法里，直接调用authLoginManager里的 getSystemUserInfo的方法即可
+2.在引入的js类，data数据设置item:{showLogin:true/false}标志位来控制
+3.在引入的wxml文件中，
+<template is="authLoginManager" data="{{...item}}">,注意item对应js文件data的item
+</template>
+-->
+
+<template name='authLoginManager'>
+  <view wx:if="{{showLogin}}">
+    <view class="login-cover" tap='onCancelLogin'>
+      <view class="t_w">
+        <!--弹出框开始-->
+        <view class="tanchu_view">
+          <view>
+            <view class="tc_title">
+              <text>该操作需要
+              </text>
+            </view>
+            <view class='tc_subtitle'>
+            <text>微信授权登录后进行</text>
+            </view>
+            <view class="main">
+              <view class='left'>
+                <image src='../../images/weixinlogin.png'></image>
+              </view>
+              <view class='mid'>
+               <image src='../../images/translogin.png'></image>
+              </view>
+              <view class='right'>
+              <image src='../../images/wenxiaodalogin.png'></image>
+              </view>
+            </view>
+            <!--确定开始-->
+            <view class="btn-area">
+              <button class='right' bindtap='confirmToJoin' open-type="getUserInfo" bindgetuserinfo="getSystemUserInfo">
+                微信登录
+              </button>
+            </view>
+            <!--确定结束-->
+          </view>
+        </view>
+        <!--弹出框结束-->
+      </view>
+    </view>
+  </view>
+</template>

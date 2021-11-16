@@ -1,0 +1,124 @@
+<!--pages/index/detail.wxml-->
+<!--问小答 问题详情页-->
+<import src="../../lib/authLogin/authLoginManager.wxml" />
+<canvas canvas-id="shareImg" style='width:750px;height:600px'></canvas>
+<view class='preview'>
+  <block wx:if="{{cardStyle == 2}}">
+    <view class="topic-card-item-container" data-voteid='{{autoId}}' bindleftevent="onLeftEvent" bindrightevent="onRightEvent"  bind:shareclick="onShareClick" bind:commentclick="onClickComment">
+      <topic-card-item comment-num="{{answer_num}}" vote-id="{{autoId}}" is-voted="{{voteInfo.isVoted}}" title="{{title}}" description="{{subtitle}}" img-url="{{imgUrl}}"
+        left-text="{{voteInfo.yesText}}" left-percent="{{voteInfo.yesPercent}}" left-num="{{voteInfo.yesNum}}"
+        right-text="{{voteInfo.noText}}" right-percent="{{voteInfo.noPercent}}" right-num="{{voteInfo.noNum}}"></topic-card-item>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='head'>
+
+      <view class="title-container">
+        <view class='title'>{{title}}</view>
+      </view>
+      <text class='subtitle'>{{remark}}</text>
+      <view class='bottom'>
+        <view class='btn-area'>
+          <button class='share-btn' formType="submit" open-type='share'>
+            <image class='icon-share' src='../../images/share.png' mode='aspectFit'></image>
+            <text class='icon-text'>分享</text>
+          </button>
+
+          <block wx:if="{{!authorized}}">
+            <button class='comment-btn' bindgetuserinfo="getUserInfo" open-type="getUserInfo">
+              <image class='icon-comment' src='../../images/comment.png' mode='aspectFit'></image>
+              <text class='icon-text'>回答</text>
+            </button>
+          </block>
+          <block wx:else>
+            <button class='comment-btn' bindtap='onClickComment'>
+              <image class='icon-comment' src='../../images/comment.png' mode='aspectFit'></image>
+              <text class='icon-text'>回答</text>
+            </button>
+          </block>
+        </view>
+      </view>
+
+    </view>
+  </block>
+  <view class='body'>
+    <view class='title'>
+      <view class='left'>全部回答</view>
+      <view class='right'>（共{{answer_num}}个）</view>
+    </view>
+    <scroll-view class='scroll-part' scroll-y='true' bindscrolltolower="searchScrollLower">
+      <block wx:if="{{answer_list.length > 0}}">
+        <block wx:for-items="{{answer_list}}">
+          <view class="item">
+            <view class="flex-wrp" style="flex-direction:row;">
+              <view class='item-top'>
+                <view class='left'>
+                  <image class='headimg' src='{{item.userInfo.headimg}}'></image>
+                  <view class='name'>{{item.userInfo.nickname}}</view>
+                </view>
+
+                <view class='right'>
+                  <view class='zanimg' bindtap='onZanClick' data-questionid='{{item.auto_id}}' data-item='{{item}}'>
+                    <image wx:if="{{item.isZan}}" class='zan-icon' src='../../images/liked.png' mode='aspectFit'></image>
+                    <image wx:else class='zan-icon' src='../../images/zan.png' mode='aspectFit'></image>
+                  </view>
+                  <view class='zannum'>{{item.zan_num}}</view>
+                </view>
+              </view>
+              <view class='item-bottom'>
+                <text>{{item.answer}}
+                </text>
+              </view>
+
+              <block wx:if="{{item.imgs.length!=0 && item.imgs[0].length != 0}}">
+                <view class='image-layout'>
+                  <block wx:for="{{item.imgs}}" wx:for-item="imgUrl">
+                    <image class='image' src='{{imgUrl}}' data-item='{{item}}' data-imgurl='{{imgUrl}}' bindtap='onImageDetail'
+                      mode='aspectFill'></image>
+                  </block>
+                </view>
+              </block>
+
+            </view>
+          </view>
+        </block>
+        <view class='no-more-layout'>
+          <image class='icon' src='../../images/main-no-more.png'></image>
+          <view class='text' hidden='{{!searchLoading}}'>
+            没有更多了..
+          </view>
+          <view class='text' hidden='{{!searchLoadComplete}}'>
+            正在载入更多..
+          </view>
+        </view>
+      </block>
+
+
+      <block wx:else>
+        <!-- 什么都没有 -->
+        <view class='empty'>
+          <image class='empty-box' src='' mode='aspectFit'></image>
+          <text class='empty-label'></text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+</view>
+
+<!-- 金币奖励弹窗 -->
+
+
+<!-- <block wx:if='{{isFromLink == true}}'> -->
+<block>
+  <view class='float-view' bindtap='onClickMainPage'>
+    <image class='icon-circle' src='../../images/circle.png' mode='aspectFit'>
+    </image>
+    <text class='float-title'>首页</text>
+  </view>
+</block>
+
+<reward-toast is-show="{{rewardToast.isShow}}" toast-title="{{rewardToast.title}}" toast-subtitle="{{rewardToast.subtitle}}"></reward-toast>
+
+<template is="authLoginManager" data="{{...item}}">
+</template>

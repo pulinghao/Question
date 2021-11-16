@@ -1,0 +1,273 @@
+@import "../../lib//authLogin/authLoginManager.wxss";
+
+.body {
+  width: 100%;
+  height: 1334rpx;
+  background: rgba(230, 233, 240, 1);
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.header {
+  width: 100%;
+  height: 168rpx;
+  padding: 32rpx, 0, 32rpx, 32rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.header .user-info {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.header .user-info .avator {
+  width: 104rpx;
+  height: 104rpx;
+  margin-left: 32rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.header .user-info .nickname {
+  color: #000;
+  font-size: 32rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 25rpx;
+  margin-right: 32rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.header .common-question-layout {
+  width: 20%;
+  margin-top: 26rpx;
+  margin-bottom: 26rpx;
+  display: flex;
+  flex-direction: row;
+  border-left: 1px solid #e0e0e0;
+}
+
+.header .common-question-layout .common-question {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header .common-question-layout .common-question .icon {
+  width: 66rpx;
+  height: 66rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header .common-question-layout .common-question .text {
+  color: #414f63;
+  font-size: 24rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12rpx;
+}
+
+.empty {
+  width: 100%;
+  height: 22rpx;
+  color: transparent;
+}
+
+.title {
+  color: #888;
+  font-size: 28rpx;
+  margin-left: 26rpx;
+  margin-top: 22rpx;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.item-layout {
+  background-color: #fff;
+  min-height: 200rpx;
+  border-radius: 8rpx;
+  padding: 22rpx 30rpx 16rpx 24rpx;
+  margin-top: 24rpx;
+  margin-left: 26rpx;
+  margin-right: 24rpx;
+}
+
+.item-layout .item-title {
+  font-size: 32rpx;
+  color: #000;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.item-layout .answer {
+  font-size: 28rpx;
+  height: 80rpx;
+  margin-top: 12rpx;
+  color: #9f9f9f;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.item-layout .bottom-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18rpx;
+}
+
+.item-layout .bottom-layout .time {
+  font-size: 24rpx;
+  color: #9f9f9f;
+}
+
+.item-layout .bottom-layout .answer-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-layout .bottom-layout .answer-layout .icon {
+  width: 26rpx;
+  height: 26rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.item-layout .bottom-layout .answer-layout .number {
+  margin-left: 8rpx;
+  font-size: 24rpx;
+  color: #9f9f9f;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.no-more-layout {
+  margin-top: 62rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.no-more-layout .icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 44rpx;
+  height: 28rpx;
+}
+
+.no-more-layout .text {
+  font-size: 32rpx;
+  color: #9f9f9f;
+  margin-left: 8rpx;
+}
+
+.image-layout {
+  display: flex;
+  flex-direction: row;
+  margin-left: 6rpx;
+  margin-right: 6rpx;
+  margin-bottom: 34rpx;
+}
+
+.image-layout .image {
+  height: 200rpx;
+  width: 200rpx;
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+}
+
+.coin-center-card{
+  position: relative;
+  top: 8rpx;
+  width:100%;
+  height:114rpx;
+  background:rgba(255,255,255,1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.coin-center-card .left-part
+{
+  width: 50%;
+}
+.coin-center-card .left-part .coin-text
+{
+  font-size:16px;
+  margin-left: 40rpx;
+}
+
+.coin-center-card .right-part
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+
+.coin-image
+{
+  width: 66rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 250rpx;
+  z-index: 1;
+}
+.yellow-bar
+{
+  width:190rpx;
+  height:56rpx;
+  background:rgba(255,219,0,1);
+  border-radius:28rpx;
+  position: relative;
+  right: 76rpx;
+}
+
+.lingqujibin
+{
+  margin-left: 50rpx;
+  color:rgba(139,87,42,1);
+  font-size:14px;
+}
+
+.arrow-image
+{
+  position: relative;
+  right: 36rpx;
+  width:16rpx;
+  height: 30rpx;
+}

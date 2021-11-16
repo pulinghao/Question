@@ -1,0 +1,6 @@
+<!-- 金币兑换模块卡片 -->
+<view class="redem-card-item">
+    <image class="redem-pic" src="{{src}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    <view class="redem-product-name">{{productName}}</view>
+    <view class="redem-product-price">{{productPrice}}金币</view>
+</view>

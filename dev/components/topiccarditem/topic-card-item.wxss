@@ -1,0 +1,33 @@
+.topic-card-item {
+    background-color: #fff;
+    min-height: 200rpx;
+    border-radius: 8rpx;
+    /* padding-bottom: 30rpx; */
+}
+
+.label-view-container {
+    margin-top: 28rpx;
+    margin-left: 22rpx;
+    margin-right: 22rpx;
+    margin-bottom: 22rpx;
+}
+
+.divider-line {
+    background-color: #EEEEEE;
+    height: 3rpx;
+    margin-left: 22rpx;
+    margin-right: 22rpx;
+}
+
+.share-comment-view-container {
+    /* margin-top: 30rpx; */
+}
+
+.voted-view-container {
+    margin-bottom: 14rpx;
+}
+
+.to-vote-view-container {
+    margin-bottom: 20rpx;
+}
+

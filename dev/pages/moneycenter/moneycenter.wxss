@@ -1,0 +1,166 @@
+.body {
+  background-color: #E6E9F0;
+  width: 100%;
+  height: 1334rpx;
+}
+
+.header-container {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background-color: #ffffff;
+  padding-bottom: 14rpx;
+  padding-top: 8rpx;
+}
+
+#remaining-money-title {
+  color: #000000;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+.remaining-money-contianer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 90rpx;
+}
+
+#remaining-money-icon {
+  width: 52rpx;
+  height: 48rpx;
+}
+
+#remaining-money {
+  color: #000000;
+  font-size: 70rpx;
+  margin-left: 24rpx;
+  font-weight: bold;
+}
+
+.money-desc-container {
+  margin-top: 10rpx;
+  height: 44rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#today-money {
+  color: #787878;
+  font-size: 24rpx;
+}
+
+.money-desc {
+  color: #787878;
+  font-size: 24rpx;
+}
+
+#money-detail-btn {
+  background-color: #FFDB00;
+  font-size: 24rpx;
+  color: #000000;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+  border-radius: 22rpx;
+}
+
+.invite-friends-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 120rpx;
+  background-color: #ffffff;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-top: 14rpx;
+}
+
+.friends-icon {
+  width: 64rpx;
+  height: 44rpx;
+}
+
+.invite-friends-desc-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.invite-friends-title-container {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  height: 120rpx;
+}
+
+.invte-friends-title {
+  font-size: 28rpx;
+  color: #000000;
+  height: 60rpx;
+}
+
+.invite-friends-desc {
+  color: #787878;
+  font-size: 24rpx;
+}
+
+.invite-friends-more-icon {
+  width: 16rpx;
+  height: 30rpx;
+}
+
+.money-task-title {
+  width: 100%;
+}
+
+.money-task-title {
+  color: #787878;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.money-task-container {
+  background-color: #ffffff;
+}
+
+.none-exchange {
+  width: 100%;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #787878;
+  text-align: center;
+}
+
+.item-divider {
+  width: 100%;
+  height: 2rpx;
+  background-color: #EAEAEA;
+}
+
+.share-btn {
+  background: none;
+  padding: 0;
+}
+
+.redem-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 8rpx;
+  padding-left: 34rpx;
+  padding-right: 34rpx;
+  justify-content: space-between;
+}
+
+.redem-card-item {
+  margin-top: 22rpx;
+  /* margin-left: 20rpx; */
+}
